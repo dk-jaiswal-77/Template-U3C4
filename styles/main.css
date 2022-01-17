@@ -1,0 +1,28 @@
+#container{
+    display: flex;
+
+}
+#sidebar{
+    width:15%;
+}
+#main{
+    width: 85%;
+}
+#container > div{
+    border: 1px solid black;
+}
+#main > div{
+    display: flex;
+    margin-bottom: 2%;
+}
+#main > div > *{
+    border: 1px solid red;
+}
+
+#main > div > div:first-child{
+    width: 40%;
+}
+
+#main > div > img{
+    width: 30%;
+}

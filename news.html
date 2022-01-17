@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
+
+  </head>
+
+  <body>
+    <!--DO NOT CHANGE THIS ID's-->
+
+    <div id="container">
+      <div id="sidebar">
+        <!--add your sidebar component here-->
+      </div>
+
+      <div id="main">
+        <div id="headline">
+          <!--add headline here-->
+        </div>
+        <img id="img" src="" alt="" />
+        <!--show news image here-->
+
+
+        <div id="content">
+          <!--add news content here-->
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
+
+<script type="module">
+  // importing sidebar
+  import sidebar from "./components/sidebar.js";
+
+  
+  // grabbing from localStorage and displaying the selected news
+  let article = JSON.parse(localStorage.getItem("articles"));
+
+  document.querySelector("#headline").textContent = article.title;
+  document.querySelector("#img").src  = article.image;
+  document.querySelector("#content").textContent = article.content;
+
+  // news headline api
+  let api_token = "67694879f532b5bb670c8fc4de3fb2ac";
+
+  //  importing api call functions; 
+  import { apiCall, appendArticles} from "./scripts/main.js";
+
+
+
+  // importing storeSearchterm function to call in this page
+  import storeSearchterm from "./scripts/search.js";
+  document.querySelector("#search_box").addEventListener("input", storeSearchterm);
+</script>

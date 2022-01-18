@@ -6,8 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/main.css">
+    <!-- <link rel="stylesheet" href="./styles/main.css"> -->
 
+    <style>
+  #container{
+    display: flex;
+  }
+  #container > sidebar{
+    width: 15%;
+  }
+
+      #main {
+        display: flex;
+        box-sizing: border-box;
+        width: 85%;
+        
+      }
+      #main > div{
+        width: 25%;
+        border: 1px solid black;
+      }
+      #main > img{
+        width: 50%;
+      }
+    </style>
   </head>
 
   <body>
@@ -38,17 +60,19 @@
 <script type="module">
   // importing sidebar
   import sidebar from "./components/sidebar.js";
+  document.querySelector("#sidebar").innerHTML = sidebar();
 
   
   // grabbing from localStorage and displaying the selected news
-  let article = JSON.parse(localStorage.getItem("articles"));
+  let article = JSON.parse(localStorage.getItem("article"));
 
   document.querySelector("#headline").textContent = article.title;
   document.querySelector("#img").src  = article.image;
   document.querySelector("#content").textContent = article.content;
 
   // news headline api
-  let api_token = "67694879f532b5bb670c8fc4de3fb2ac";
+  let api_token = "fdcacc7ebbbf220a6e9e86d16be66419";
+
 
   //  importing api call functions; 
   import { apiCall, appendArticles} from "./scripts/main.js";

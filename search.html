@@ -37,7 +37,8 @@
 
   let search_term = JSON.parse(localStorage.getItem("search_term"));
   //search api
-  let api_token = "c3bc9da2755db159120ffdc58c71b956";
+  let api_token = "fdcacc7ebbbf220a6e9e86d16be66419";
+
 
 let search_api = `https://gnews.io/api/v4/search?q=${search_term}&token=${api_token}`;
   apicall(search_api);
@@ -45,5 +46,5 @@ let search_api = `https://gnews.io/api/v4/search?q=${search_term}&token=${api_to
 
     // importing storeSearchterm function to call in this page
     import storeSearchterm from "./scripts/search.js";
-  document.querySelector("#search_box").addEventListener("input", storeSearchterm);
+  document.querySelector("#search_box").addEventListener("Enter", storeSearchterm);
 </script>

@@ -61,8 +61,8 @@ function findArticle (event_obj)
 {
     let article = {
         title : event_obj.target.parentNode.firstElementChild.textContent,
-        content : event_obj.target.parentNode.firstElementChild.nexElementSibling.textContent,
-        image : event_obj.target.parentNode.lastElementChild.src,
+        image : event_obj.target.parentNode.firstElementChild.nextElementSibling.src,
+        content : event_obj.target.parentNode.lastElementChild.textContent,
     }
     localStorage.setItem("article", JSON.stringify(article));
     window.location.href = "./news.html";

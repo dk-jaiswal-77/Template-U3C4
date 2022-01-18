@@ -37,7 +37,7 @@
   // importing api call functions
   import { apiCall, appendArticles , findArticle} from "./scripts/main.js";
   // news headline api
-  let api_token = "67694879f532b5bb670c8fc4de3fb2ac";
+  let api_token = "fdcacc7ebbbf220a6e9e86d16be66419";
 
   let headline_api = `https://gnews.io/api/v4/top-headlines?country=in&lang=en&max=20&token=${api_token}`;
 
@@ -52,7 +52,7 @@
 
   // importing storeSearchterm function to call in this page
   import storeSearchterm from "./scripts/search.js";
-  document.querySelector("#search_box").addEventListener("input", storeSearchterm);
+  document.querySelector("#search_box").addEventListener("change", storeSearchterm);
 
 
 </script>
